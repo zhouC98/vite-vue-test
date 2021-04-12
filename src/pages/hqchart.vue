@@ -16,12 +16,28 @@
     <div id="minute" ref="minute"></div>
 
   </div>
+  <el-button class="focus:outline-none" @click="elClick">element-button</el-button>
+
+  <el-dialog
+    title="提示"
+    v-model="dialogVisible"
+    width="30%"
+    :before-close="beforeDone">
+    <span>这是一段信息</span>
+    <template #footer>
+      <span class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="priClick">确 定</el-button>
+      </span>
+    </template>
+  </el-dialog>
+
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted, onUnmounted, reactive, ref } from "vue";
-import type { Ref } from 'vue'
 import HQChart from 'hqchart'
+import { ElMessage } from 'element-plus'
 function DefaultData() {}
 DefaultData.GetMinuteOption = function() {
   var option = {
@@ -70,8 +86,9 @@ DefaultData.GetMinuteOption = function() {
 
 export default defineComponent({
   setup() {
+    const dialogVisible = ref(false)
     const Symbol = ref('600519.sh')
-    const minute: Ref<any> = ref(null)
+    const minute = ref<HTMLElement>(null)
     const Minute = reactive({
       JSChart: null,
       Option: DefaultData.GetMinuteOption(),
@@ -142,14 +159,26 @@ export default defineComponent({
     const ClearChartDrawPicture = () => {
       (Minute.JSChart as any).ClearChartDrawPicture()
     }
-
+    const elClick = () => {
+      dialogVisible.value = true
+    }
+    const priClick = () => {
+      ElMessage.warning('警告消息')
+    }
+    const beforeDone = (done) => {
+      done()
+    }
     return {
       CreateDrawPciture,
       ClearChartDrawPicture,
       Symbol,
       minute,
       changeSymbol,
-      Minute
+      Minute,
+      elClick,
+      dialogVisible,
+      priClick,
+      beforeDone
     }
   }
 })
