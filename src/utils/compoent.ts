@@ -1,4 +1,4 @@
 
-import { ElButton, ElDialog } from 'element-plus'
+import { ElButton, ElDialog, ElIcon } from 'element-plus'
 
-export default [ ElButton, ElDialog ]
+export default [ ElButton, ElDialog, ElIcon ]
