@@ -24,3 +24,15 @@ Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
 2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
 3. Open `src/main.ts` in VSCode
 4. Open the VSCode command palette 5. Search and run "Select TypeScript version" -> "Use workspace version"
+
+
+CPU   AMD R7 3700X          ￥1559
+SSD   影驰 擎 512G           ￥379
+散热器 ID-COOLING 240        ￥309
+内存   十铨8G*2 3200          ￥646
+电源   首席玩家650W 银牌全模组  ￥329
+机箱   航嘉GX580H             ￥195
+主板   ROG B450-F            ￥549
+显卡   GT710
+-------------------------
+1559 + 646 + 329 + 309 + 379 + 195 + 549 = 3966

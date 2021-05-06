@@ -11,12 +11,12 @@ import { defineComponent, ref, nextTick, onMounted, onBeforeUpdate, watch } from
 
 export default defineComponent({
   setup() {
-      const numberNow = ref(1000)
+      const numberNow = ref(0)
       const maxLen = ref(6)
       const computeNumber = ref<string[]>([])
       const numberDom = ref<any>([])
-
-      const prefixZero = (num: number, n: number) => (Array(n).join('0') + num).slice(-n).split('')
+      
+      const prefixZero = (num: number | string, n: number) => (Array(n).join('0') + num).slice(-n).split('')
 
       const getRandomNumber = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min) 
 
@@ -52,7 +52,6 @@ export default defineComponent({
         numberDom.value = []
       })
       return {
-        numberDom,
         computeNumber,
         numberList
       }
