@@ -10,6 +10,7 @@
     "element-plus": "^1.0.2-beta.39",
     "hqchart": "^1.1.9356",
     "jquery": "^3.6.0",
+    "postcss-import": "^14.0.2",
     "secure-ls": "^1.2.6",
     "tailwindcss": "^2.0.3",
     "vue": "^3.0.5",
